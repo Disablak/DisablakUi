@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d13521bf48144dfb78a2587edc55ea, type: 3}
+  m_Name: PresetClickableVisualButtonYellow
+  m_EditorClassIdentifier: 
+  colorDefault: {r: 1, g: 0.78039217, b: 0, a: 1}
+  colorClick: {r: 0.84313726, g: 0.65882355, b: 0.003921569, a: 1}
+  colorHover: {r: 0.84313726, g: 0.65882355, b: 0.003921569, a: 1}
+  colorDisabled: {r: 1, g: 0.78039217, b: 0, a: 0.5019608}
+  spriteDefault: {fileID: 0}
+  spriteClick: {fileID: 0}
+  spriteHover: {fileID: 0}
+  spriteDisabled: {fileID: 0}
