@@ -8,31 +8,12 @@ using UnityEngine;
 public class UIPresetScriptable : ScriptableObject
 {
     [Serializable]
-    public class VisualComponentTypeToPreset
-    {
-        public VisualStyle            type;
-        public PresetClickableVisual   visual;
-        public PresetIconAndLabel iconAndLabel;
-    }
-
-    [Serializable]
-    public class ImagePreset
-    {
-        public VisualStyle type;
-        public Color color = Color.white;
-        public Sprite sprite;
-    }
-
-    [Serializable]
     public class StyleClickable
     {
         public VisualStyle           type;
         public PresetClickableVisual visual;
         public PresetIconAndLabel    iconAndLabel;
     }
-
-    public List<VisualComponentTypeToPreset> typePresets;
-    public List<ImagePreset>                 imagePresets;
 
     [SerializeField] private List<StyleClickable>                 _stylePresets;
 
@@ -77,11 +58,6 @@ public class UIPresetScriptable : ScriptableObject
 
         return style.iconAndLabel;
     }
-
-    public ImagePreset GetImagePreset(VisualStyle type)
-    {
-        return imagePresets.First(x => x.type == type);
-    }
 }
 
 
@@ -90,5 +66,7 @@ public enum VisualStyle
     None = 0,
 
     ButtonDefault = 1,
-    ButtonSpecial = 2
+    ButtonSpecial = 2,
+
+    ToggleDefault = 3,
 }

@@ -6,44 +6,36 @@ using UnityEngine;
 public class MyToggle : MyInteractable
 {
     [Header(nameof(MyToggle))]
-    [SerializeField] private   VisualStyle         _visualType;
-    [SerializeField] private   VisualInteractable             _visualBackground;
-    [SerializeField] private   VisualIconAndLabel _visualIconAndLabel;
-    [SerializeField] protected MyIconWithLabel             _iconWithLabel;
+    [SerializeField] private VisualInteractable _visualInteractable;
+    [SerializeField] private VisualIconAndLabel _visualIconAndLabel;
+    [SerializeField] private MyIconWithLabel    _iconWithLabel;
     [Space]
-    [SerializeField] private List<GameObject> objectsShowOnActiveState;
+    [SerializeField] private List<GameObject> _objectsShowOnActiveState;
 
     private int _toggleId = -1;
     private ToggleState _toggleState = ToggleState.Default;
-    [SerializeField] private bool _isHoverEnable = true;
 
     public Action<int, ToggleState> OnToggleChanged = null;
     
     public int ToggleId => _toggleId;
-    
-    public bool IsHoverEnable => _isHoverEnable;
+
 
 
     public void Init(int id)
     {
-        if (_visualBackground)
-            _visualBackground.SetVisualPreset(_visualType);
-
-        if (_visualIconAndLabel)
-            _visualIconAndLabel.SetVisualPreset(_visualType);
+        _visualInteractable.SetVisualPreset(_visualStyle);
+        _visualIconAndLabel.SetVisualPreset(_visualStyle);
 
         _toggleId = id;
         ChangeVisualState(_toggleState);
 
-        if (_visualBackground)
-            _visualBackground.ResetStateOnDisable(false);
-        if (_visualIconAndLabel)
-            _visualIconAndLabel.ResetStateOnDisable(false);
+        _visualInteractable.ResetStateOnDisable(false);
+        _visualIconAndLabel.ResetStateOnDisable(false);
     }
 
     public void AddObjectToVisualShow(GameObject showObject)
     {
-        objectsShowOnActiveState.Add(showObject);
+        _objectsShowOnActiveState.Add(showObject);
     }
 
     protected override void OnChangeInteractable()
@@ -59,28 +51,20 @@ public class MyToggle : MyInteractable
 
     protected override void OnEnter()
     {
-        if (IsHoverEnable)
-        {
-            OnToggleChanged?.Invoke(_toggleId, ToggleState.Hover);
-        }
+        OnToggleChanged?.Invoke(_toggleId, ToggleState.Hover);
     }
 
     protected override void OnExit()
     {
-        if (IsHoverEnable)
-        {
-            OnToggleChanged?.Invoke(_toggleId, ToggleState.Default);
-        }
+        OnToggleChanged?.Invoke(_toggleId, ToggleState.Default);
     }
 
     protected virtual void OnStateDefault()
     {
-        if (_visualBackground)
-            _visualBackground.OnMouseExit();
-        if (_visualIconAndLabel)
-            _visualIconAndLabel.OnMouseExit();
+        _visualInteractable.OnMouseExit();
+        _visualIconAndLabel.OnMouseExit();
 
-        foreach (GameObject obj in objectsShowOnActiveState)
+        foreach (GameObject obj in _objectsShowOnActiveState)
         {
             obj.SetActive(false);
         }
@@ -88,20 +72,16 @@ public class MyToggle : MyInteractable
     
     protected virtual void OnStateHover()
     {
-        if (_visualBackground)
-            _visualBackground.OnMouseEnter();
-        if (_visualIconAndLabel)
-            _visualIconAndLabel.OnMouseEnter();
+        _visualInteractable.OnMouseEnter();
+        _visualIconAndLabel.OnMouseEnter();
     }
 
     protected virtual void OnStateSelected()
     {
-        if (_visualBackground)
-            _visualBackground.OnClick();
-        if (_visualIconAndLabel)
-            _visualIconAndLabel.OnClick();
+        _visualInteractable.OnClick();
+        _visualIconAndLabel.OnClick();
 
-        foreach (GameObject obj in objectsShowOnActiveState)
+        foreach (GameObject obj in _objectsShowOnActiveState)
         {
             obj.SetActive(true);
         }
@@ -109,10 +89,8 @@ public class MyToggle : MyInteractable
     
     protected virtual void OnStateDisabled()
     {
-        if (_visualBackground)
-            _visualBackground.OnDisabled();
-        if (_visualIconAndLabel)
-            _visualIconAndLabel.OnDisabled();
+        _visualInteractable.OnDisabled();
+        _visualIconAndLabel.OnDisabled();
     }
     
     public void ChangeVisualState(ToggleState state)

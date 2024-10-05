@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37b9bd6c24c23452bae716bac4ff39a1, type: 3}
   m_Name: UIPresetDefault
   m_EditorClassIdentifier: 
-  typePresets: []
-  imagePresets: []
   _stylePresets:
   - type: 1
     visual: {fileID: 11400000, guid: c201d4f64630646f78882d951b41c33a, type: 2}
@@ -21,3 +19,6 @@ MonoBehaviour:
   - type: 2
     visual: {fileID: 11400000, guid: 0a496f8b5501244b0a887c11df3a39ef, type: 2}
     iconAndLabel: {fileID: 11400000, guid: d0b1b1a3669d64a828d3dd16a177bf0b, type: 2}
+  - type: 3
+    visual: {fileID: 11400000, guid: e1caf729bfb5f42329084a696f0e039a, type: 2}
+    iconAndLabel: {fileID: 11400000, guid: 5c6ee157d09f14581afa9f23067ade6c, type: 2}
