@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class VisualIconAndLabelComponent : MyMonoBehaviour, IVisualState
+public class VisualIconAndLabel : MyMonoBehaviour, IVisualState
 {
     [SerializeField] private Image           imgIcon;
     [SerializeField] private TextMeshProUGUI txtLabel;
@@ -12,9 +12,9 @@ public class VisualIconAndLabelComponent : MyMonoBehaviour, IVisualState
     private PresetIconAndLabel _presetIconAndLabel;
 
 
-    public void SetVisualPreset(VisualStyle type)
+    public void SetVisualPreset(VisualStyle visualStyle)
     {
-        //_presetIconAndLabel = GameSettings.CurrentUIPreset.GetIconAndLabel(type);
+        _presetIconAndLabel = UiThemeManager.Instance.GetPreset().GetIconAndLabel(visualStyle);
     }
 
     private void OnDisable()

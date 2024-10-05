@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -6,19 +5,12 @@ using UnityEngine.EventSystems;
 public abstract class MyInteractable : MyMonoBehaviour, IElementUI, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [Header(nameof(MyInteractable))]
-    [SerializeField] private VisualStyle _visualStyle;
+    [SerializeField] protected VisualStyle _visualStyle;
     [SerializeField] private bool        _isInteractable = true;
     [SerializeField] private bool        _isInProgress   = false;
 
-    private UIPresetScriptable _currentPreset;
-    
     public bool IsInteractable => _isInteractable;
 
-
-    protected virtual void Awake()
-    {
-        _currentPreset = GameUi.Instance.GetUiPreset();
-    }
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {

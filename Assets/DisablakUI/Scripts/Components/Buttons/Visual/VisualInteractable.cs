@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class VisualComponent : MyMonoBehaviour, IVisualState
+public class VisualInteractable : MyMonoBehaviour, IVisualState
 {
     [SerializeField] private Image                img;
     [SerializeField] private VisualClickAnimation clickAnim;
@@ -11,9 +11,9 @@ public class VisualComponent : MyMonoBehaviour, IVisualState
     private PresetClickableVisual _visualPreset;
 
 
-    public void SetVisualPreset(VisualStyle type)
+    public void SetVisualPreset(VisualStyle visualStyle)
     {
-        //_visualPreset = GameSettings.CurrentUIPreset.GetVisual(type);
+        _visualPreset = UiThemeManager.Instance.GetPreset().GetVisual(visualStyle);
     }
 
     private void OnDisable()

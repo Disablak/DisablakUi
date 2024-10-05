@@ -7,8 +7,8 @@ public class MyToggle : MyInteractable
 {
     [Header(nameof(MyToggle))]
     [SerializeField] private   VisualStyle         _visualType;
-    [SerializeField] private   VisualComponent             _visualBackground;
-    [SerializeField] private   VisualIconAndLabelComponent _visualIconAndLabel;
+    [SerializeField] private   VisualInteractable             _visualBackground;
+    [SerializeField] private   VisualIconAndLabel _visualIconAndLabel;
     [SerializeField] protected MyIconWithLabel             _iconWithLabel;
     [Space]
     [SerializeField] private List<GameObject> objectsShowOnActiveState;
