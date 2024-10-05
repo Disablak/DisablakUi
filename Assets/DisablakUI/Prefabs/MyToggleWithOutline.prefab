@@ -85,11 +85,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4788418640568705843, guid: f522185de6a9d4b3ab685773472f9256, type: 3}
       propertyPath: m_Name
-      value: Toggle0 Variant
+      value: MyToggleWithOutline
       objectReference: {fileID: 0}
     - target: {fileID: 6740968101043251004, guid: f522185de6a9d4b3ab685773472f9256, type: 3}
       propertyPath: _visualStyle
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6740968101043251004, guid: f522185de6a9d4b3ab685773472f9256, type: 3}
       propertyPath: _objectsShowOnActiveState.Array.size

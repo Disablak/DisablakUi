@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509455ac820f4488b81ebe11cef65c01, type: 3}
   m_Name: IconAndLabelVisualDefault
   m_EditorClassIdentifier: 
-  labelColorDefault: {r: 0, g: 0, b: 0, a: 1}
-  iconColorDefault: {r: 0, g: 0, b: 0, a: 1}
-  labelColorSelected: {r: 0.3490566, g: 0.22556959, b: 0.22556959, a: 1}
-  iconColorSelected: {r: 0.34901962, g: 0.22745098, b: 0.22745098, a: 1}
+  labelColorDefault: {r: 0.6666667, g: 0.7058824, b: 0.7764706, a: 1}
+  iconColorDefault: {r: 0.6666667, g: 0.7058824, b: 0.7764706, a: 1}
+  labelColorSelected: {r: 0.6666667, g: 0.7058824, b: 0.7764706, a: 1}
+  iconColorSelected: {r: 0.6666667, g: 0.7058824, b: 0.7764706, a: 1}
   labelColorDisabled: {r: 0, g: 0, b: 0, a: 0.5019608}
   iconColorDisabled: {r: 0, g: 0, b: 0, a: 0.5019608}

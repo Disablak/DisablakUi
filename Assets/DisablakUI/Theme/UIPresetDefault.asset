@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stylePresets:
   - type: 1
-    visual: {fileID: 11400000, guid: c201d4f64630646f78882d951b41c33a, type: 2}
-    iconAndLabel: {fileID: 11400000, guid: d0b1b1a3669d64a828d3dd16a177bf0b, type: 2}
+    _visualInteractableScriptable: {fileID: 11400000, guid: b78d5d11daba54700852a8e57187e2a4, type: 2}
+    _visualIconAndLabelScriptable: {fileID: 11400000, guid: d0b1b1a3669d64a828d3dd16a177bf0b, type: 2}
   - type: 2
-    visual: {fileID: 11400000, guid: 0a496f8b5501244b0a887c11df3a39ef, type: 2}
-    iconAndLabel: {fileID: 11400000, guid: d0b1b1a3669d64a828d3dd16a177bf0b, type: 2}
+    _visualInteractableScriptable: {fileID: 11400000, guid: a31f711e9301d4ec2b7d96a1677b9f08, type: 2}
+    _visualIconAndLabelScriptable: {fileID: 11400000, guid: d0b1b1a3669d64a828d3dd16a177bf0b, type: 2}
   - type: 3
-    visual: {fileID: 11400000, guid: e1caf729bfb5f42329084a696f0e039a, type: 2}
-    iconAndLabel: {fileID: 11400000, guid: 5c6ee157d09f14581afa9f23067ade6c, type: 2}
+    _visualInteractableScriptable: {fileID: 0}
+    _visualIconAndLabelScriptable: {fileID: 11400000, guid: 5c6ee157d09f14581afa9f23067ade6c, type: 2}

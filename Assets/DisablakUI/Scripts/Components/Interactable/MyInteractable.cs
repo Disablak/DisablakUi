@@ -6,8 +6,8 @@ public abstract class MyInteractable : MyMonoBehaviour, IElementUI, IPointerClic
 {
     [Header(nameof(MyInteractable))]
     [SerializeField] protected VisualStyle _visualStyle;
-    [SerializeField] private bool        _isInteractable = true;
-    [SerializeField] private bool        _isInProgress   = false;
+    [SerializeField] private   bool        _isInteractable = true;
+    [SerializeField] private   bool        _isInProgress   = false;
 
     public bool IsInteractable => _isInteractable;
 
