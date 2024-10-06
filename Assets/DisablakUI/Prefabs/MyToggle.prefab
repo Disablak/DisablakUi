@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bde3ae18f1741b6b317995f265b231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  img: {fileID: 6296915420247511975}
-  clickAnim: {fileID: 7860301143583754584}
+  _img: {fileID: 6296915420247511975}
+  _clickAnim: {fileID: 7860301143583754584}
 --- !u!1 &4788418640568705843
 GameObject:
   m_ObjectHideFlags: 0

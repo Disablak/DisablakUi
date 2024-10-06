@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DisablakExtensions;
 using TMPro;
 using UnityEngine;
 
 
-public class MyPagerContainer<TData, TElementUI> : MyMonoBehaviour
+public class MyPagerContainer<TData, TElementUI> : MonoBehaviour
     where TData : IDataItem
     where TElementUI : MonoBehaviour
 {
@@ -127,8 +126,7 @@ public class MyPagerContainer<TData, TElementUI> : MyMonoBehaviour
 
     protected virtual void UpdateTextPage(int cur, int max)
     {
-        Color lightColor = new Color(0.67f, 0.71f, 0.78f);
-        _txtPage.text = $"Сторінки: {cur.ToString().ChangeColor(lightColor)} із {max.ToString().ChangeColor(lightColor)}";
+        _txtPage.text = $"{cur} / {max}";
     }
 
     private void EnableTextNoElements(bool enable)

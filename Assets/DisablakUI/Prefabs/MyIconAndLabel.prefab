@@ -278,9 +278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e61ac2d9c34f4cfbb8b02283f006f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layoutType: 2
-  spacing: 10
-  invertSort: 0
+  _layoutType: 2
+  _spacing: 10
+  _invertSort: 0
 --- !u!114 &2395781953698076398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,5 +293,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b447f5ad630f04070b8fb62d09022584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imgIcon: {fileID: 3645660261791575549}
-  txtLabel: {fileID: 1356788600456655408}
+  _imgIcon: {fileID: 3645660261791575549}
+  _txtLabel: {fileID: 1356788600456655408}

@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class VisualIconAndLabel : MyMonoBehaviour, IVisualState
+public class VisualIconAndLabel : MonoBehaviour, IVisualState
 {
-    [SerializeField] private Image           imgIcon;
-    [SerializeField] private TextMeshProUGUI txtLabel;
+    [SerializeField] private Image           _imgIcon;
+    [SerializeField] private TextMeshProUGUI _txtLabel;
 
     private bool               _resetOnDisable = true;
     private VisualIconAndLabelScriptable visualIconAndLabelScriptable;
@@ -32,10 +32,10 @@ public class VisualIconAndLabel : MyMonoBehaviour, IVisualState
             return;
         }
 
-        if (imgIcon)
-            imgIcon.color = visualIconAndLabelScriptable.iconColorDefault;
+        if (_imgIcon)
+            _imgIcon.color = visualIconAndLabelScriptable.iconColorDefault;
 
-        txtLabel.color = visualIconAndLabelScriptable.labelColorDefault;
+        _txtLabel.color = visualIconAndLabelScriptable.labelColorDefault;
     }
 
     private void ColorToSelected()
@@ -45,10 +45,10 @@ public class VisualIconAndLabel : MyMonoBehaviour, IVisualState
             return;
         }
 
-        if (imgIcon)
-            imgIcon.color = visualIconAndLabelScriptable.iconColorSelected;
+        if (_imgIcon)
+            _imgIcon.color = visualIconAndLabelScriptable.iconColorSelected;
 
-        txtLabel.color = visualIconAndLabelScriptable.labelColorSelected;
+        _txtLabel.color = visualIconAndLabelScriptable.labelColorSelected;
     }
 
     public void ResetStateOnDisable(bool isReset)
@@ -78,9 +78,9 @@ public class VisualIconAndLabel : MyMonoBehaviour, IVisualState
             return;
         }
 
-        if (imgIcon)
-            imgIcon.color = visualIconAndLabelScriptable.iconColorDisabled;
+        if (_imgIcon)
+            _imgIcon.color = visualIconAndLabelScriptable.iconColorDisabled;
 
-        txtLabel.color = visualIconAndLabelScriptable.labelColorDisabled;
+        _txtLabel.color = visualIconAndLabelScriptable.labelColorDisabled;
     }
 }

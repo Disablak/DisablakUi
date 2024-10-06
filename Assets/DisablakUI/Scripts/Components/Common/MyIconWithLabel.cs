@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 
 [RequireComponent(typeof(MyHorizontalLayout))]
-public class MyIconWithLabel : MyMonoBehaviour
+public class MyIconWithLabel : MonoBehaviour
 {
     [SerializeField] private Image              _imgIcon;
     [SerializeField] private TextMeshProUGUI    _txtLabel;

@@ -4,13 +4,20 @@ using TMPro;
 using UnityEngine;
 
 
-public class MyHorizontalLayout : MyMonoBehaviour
+public class MyHorizontalLayout : MonoBehaviour
 {
-    //[Observe(nameof(Layout))]
-    [SerializeField] private HorizontalLayoutType layoutType = HorizontalLayoutType.Center;
-    [SerializeField] private float spacing = 10.0f;
-    [SerializeField] private bool invertSort = false;
-    
+    [SerializeField] private HorizontalLayoutType _layoutType = HorizontalLayoutType.Center;
+    [SerializeField] private float _spacing = 10.0f;
+    [SerializeField] private bool _invertSort = false;
+
+    private RectTransform _rectTransform;
+
+
+    private void Awake()
+    {
+        _rectTransform = GetComponent<RectTransform>();
+    }
+
     private void Start()
     {
         Layout();
@@ -18,12 +25,12 @@ public class MyHorizontalLayout : MyMonoBehaviour
 
     public void Layout()
     {
-        if (layoutType == HorizontalLayoutType.None)
+        if (_layoutType == HorizontalLayoutType.None)
         {
             return;
         }
 
-        if (invertSort && Application.isPlaying)
+        if (_invertSort && Application.isPlaying)
         {
             List<Transform> children = GetActiveChildren();
             foreach (Transform child in children)
@@ -32,16 +39,16 @@ public class MyHorizontalLayout : MyMonoBehaviour
             }
         }
         
-        switch (layoutType)
+        switch (_layoutType)
         {
         case HorizontalLayoutType.Left:
             LayoutChildren(0.0f);
             break;
         
         case HorizontalLayoutType.Center: 
-            float totalWidth = GetTotalChildrenWidth();
-            float rectHalfWidth = RectTransform.rect.width / 2.0f;
-            float startX = rectHalfWidth - (totalWidth / 2f);
+            float totalWidth    = GetTotalChildrenWidth();
+            float rectHalfWidth = _rectTransform.rect.width / 2.0f;
+            float startX        = rectHalfWidth - (totalWidth / 2f);
             LayoutChildren(startX);
             break;
         
@@ -57,7 +64,7 @@ public class MyHorizontalLayout : MyMonoBehaviour
         for (int i = 0; i < children.Count; i++)
         {
             Transform child = children[i];
-            float     space = i == children.Count - 1 ? 0.0f : spacing;
+            float     space = i == children.Count - 1 ? 0.0f : _spacing;
             totalWidth += GetWidth(child) + space;
         }
         
@@ -99,7 +106,7 @@ public class MyHorizontalLayout : MyMonoBehaviour
         {
             Transform child = children[i];
             RectTransform childRectTransform = child.GetComponent<RectTransform>();
-            float space = i == children.Count - 1 ? 0.0f : spacing;
+            float space = i == children.Count - 1 ? 0.0f : _spacing;
             childRectTransform.anchoredPosition = new Vector2(currentX, 0f);
             currentX += GetWidth(child) + space;
         }

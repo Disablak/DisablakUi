@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public abstract class MyInteractable : MyMonoBehaviour, IElementUI, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public abstract class MyInteractable : MonoBehaviour, IElementUI, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [Header(nameof(MyInteractable))]
     [SerializeField] protected VisualStyle _visualStyle;

@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class VisualInteractable : MyMonoBehaviour, IVisualState
+public class VisualInteractable : MonoBehaviour, IVisualState
 {
-    [SerializeField] private Image                img;
-    [SerializeField] private VisualClickAnimation clickAnim;
+    [SerializeField] private Image                _img;
+    [SerializeField] private VisualClickAnimation _clickAnim;
 
     private bool _resetOnDisable = true;
     private VisualInteractableScriptable visualInteractableScriptable;
@@ -31,11 +31,11 @@ public class VisualInteractable : MyMonoBehaviour, IVisualState
             return;
         }
 
-        img.color = visualInteractableScriptable.colorDefault;
+        _img.color = visualInteractableScriptable.colorDefault;
 
         if (visualInteractableScriptable.spriteDefault)
         {
-            img.sprite = visualInteractableScriptable.spriteDefault;
+            _img.sprite = visualInteractableScriptable.spriteDefault;
         }
     }
 
@@ -51,16 +51,16 @@ public class VisualInteractable : MyMonoBehaviour, IVisualState
             return;
         }
 
-        img.color = visualInteractableScriptable.colorClick;
+        _img.color = visualInteractableScriptable.colorClick;
 
         if (visualInteractableScriptable.spriteClick)
         {
-            img.sprite = visualInteractableScriptable.spriteClick;
+            _img.sprite = visualInteractableScriptable.spriteClick;
         }
 
-        if (clickAnim)
+        if (_clickAnim)
         {
-            clickAnim.StartAnimation();
+            _clickAnim.StartAnimation();
         }
     }
 
@@ -71,11 +71,11 @@ public class VisualInteractable : MyMonoBehaviour, IVisualState
             return;
         }
 
-        img.color = visualInteractableScriptable.colorHover;
+        _img.color = visualInteractableScriptable.colorHover;
 
         if (visualInteractableScriptable.spriteHover)
         {
-            img.sprite = visualInteractableScriptable.spriteHover;
+            _img.sprite = visualInteractableScriptable.spriteHover;
         }
     }
 
@@ -91,11 +91,11 @@ public class VisualInteractable : MyMonoBehaviour, IVisualState
             return;
         }
 
-        img.color = visualInteractableScriptable.colorDisabled;
+        _img.color = visualInteractableScriptable.colorDisabled;
 
         if (visualInteractableScriptable.spriteDisabled)
         {
-            img.sprite = visualInteractableScriptable.spriteDisabled;
+            _img.sprite = visualInteractableScriptable.spriteDisabled;
         }
     }
 }
