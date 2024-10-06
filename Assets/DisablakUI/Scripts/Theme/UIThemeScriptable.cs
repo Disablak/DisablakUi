@@ -10,9 +10,9 @@ public class UIThemeScriptable : ScriptableObject
     [Serializable]
     public class StyleClickable
     {
-        public VisualStyle           type;
-        public VisualInteractableScriptable _visualInteractableScriptable;
-        public VisualIconAndLabelScriptable    _visualIconAndLabelScriptable;
+        public VisualStyle                  type;
+        public VisualInteractableScriptable visualInteractable;
+        public VisualIconAndLabelScriptable visualIconAndLabel;
     }
 
     [SerializeField] private List<StyleClickable> _stylePresets;
@@ -32,13 +32,13 @@ public class UIThemeScriptable : ScriptableObject
             return null;
         }
 
-        if (style._visualInteractableScriptable == null)
+        if (style.visualInteractable == null)
         {
             Debug.LogWarning($"Style Visual {type} not found");
             return null;
         }
 
-        return style._visualInteractableScriptable;
+        return style.visualInteractable;
     }
 
     public VisualIconAndLabelScriptable GetIconAndLabel(VisualStyle type)
@@ -50,13 +50,13 @@ public class UIThemeScriptable : ScriptableObject
             return null;
         }
 
-        if (style._visualIconAndLabelScriptable == null)
+        if (style.visualIconAndLabel == null)
         {
             Debug.LogError($"Style Icon and Label {type} not found");
             return null;
         }
 
-        return style._visualIconAndLabelScriptable;
+        return style.visualIconAndLabel;
     }
 }
 

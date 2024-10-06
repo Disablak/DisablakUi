@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class MySliderWithLabel : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI txtValue;
+    [SerializeField] private TextMeshProUGUI _txtValue;
     
     private Slider _slider;
     
@@ -42,6 +42,6 @@ public class MySliderWithLabel : MonoBehaviour
     
     private void SetTextValue(float value)
     {
-        txtValue.text = $"{value:0.##}";
+        _txtValue.text = $"{value:0.##}";
     }
 }
